@@ -113,24 +113,14 @@
     ]
   },
   "modules": [
-    "linagora.esn.calendar",
-    "linagora.esn.contact",
-    "linagora.esn.contact.import",
+
     "linagora.esn.core.webserver",
     "linagora.esn.core.wsserver",
     "linagora.esn.cron",
-    "linagora.esn.davproxy",
     "linagora.esn.davserver",
-    "linagora.esn.dav.import",
     "linagora.esn.digest.daily",
     "linagora.esn.jobqueue",
-    "linagora.esn.graceperiod",
-    "linagora.esn.messaging.email",
-    "linagora.esn.oauth.consumer",
-    "linagora.esn.sync",
-    "linagora.esn.contact.collect",
-    "linagora.esn.resource",
-    "linagora.esn.lemonldap"
+    "linagora.esn.messaging.email"
   ],
   "email": {
     "templatesDir": "./templates/email"
