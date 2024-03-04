@@ -104,17 +104,18 @@
   },
   "auth": {
     "strategies": ["mongo-ldap", "local", "mongo"],
-    "apiStrategies": ["basic-mongo-ldap", "basic-mongo", "openid-connect", "bearer", "jwt"]
+    "apiStrategies": [
+      "basic-mongo-ldap",
+      "basic-mongo",
+      "openid-connect",
+      "bearer",
+      "jwt"
+    ]
   },
   "modules": [
-    "linagora.esn.account",
     "linagora.esn.calendar",
     "linagora.esn.contact",
-    "linagora.esn.contact.google",
     "linagora.esn.contact.import",
-    "linagora.esn.contact.import.twitter",
-    "linagora.esn.contact.import.google",
-    "linagora.esn.contact.twitter",
     "linagora.esn.core.webserver",
     "linagora.esn.core.wsserver",
     "linagora.esn.cron",
@@ -126,21 +127,10 @@
     "linagora.esn.graceperiod",
     "linagora.esn.messaging.email",
     "linagora.esn.oauth.consumer",
-    "linagora.esn.profile",
-    "linagora.esn.user.status",
-    "linagora.esn.controlcenter",
-    "linagora.esn.unifiedinbox",
-    "linagora.esn.unifiedinbox.james",
-    "linagora.esn.unifiedinbox.linshare",
-    "linagora.esn.unifiedinbox.social",
-    "linagora.esn.admin",
     "linagora.esn.sync",
     "linagora.esn.contact.collect",
     "linagora.esn.resource",
-    "linagora.esn.james",
-    "linagora.esn.group",
-    "linagora.esn.lemonldap",
-    "linagora.esn.linshare"
+    "linagora.esn.lemonldap"
   ],
   "email": {
     "templatesDir": "./templates/email"

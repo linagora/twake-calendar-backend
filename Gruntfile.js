@@ -3,7 +3,6 @@
 /* eslint-disable no-process-env, no-console */
 
 var os = require('os');
-var timeGrunt = require('time-grunt');
 var conf_path = './test/config/';
 var servers = require(conf_path + 'servers-conf');
 var config = require('./config/default.json');
@@ -11,9 +10,7 @@ var dockerodeConfig = require('./docker/config/dockerode');
 var GruntfileUtils = require('./tasks/utils/Gruntfile-utils');
 
 module.exports = function(grunt) {
-  // must be run at the top
-  timeGrunt(grunt);
-
+  
   var gruntfileUtils = new GruntfileUtils(grunt, servers);
   var shell = gruntfileUtils.shell();
   var container = gruntfileUtils.container();
