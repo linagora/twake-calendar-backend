@@ -113,7 +113,7 @@
     ]
   },
   "modules": [
-
+    "linagora.esn.calendar",
     "linagora.esn.core.webserver",
     "linagora.esn.core.wsserver",
     "linagora.esn.cron",
