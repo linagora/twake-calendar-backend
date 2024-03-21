@@ -1,0 +1,11 @@
+mixin displayAttendees(attendees, organizer)
+  ul(style='padding-inline-start: 16px; margin: 0;')
+    li
+      span(style='font-weight: 500') #{organizer.cn}
+      span(style='color: #787878;') &nbsp;&lt;#{organizer.email}&gt;
+      span(style='font-weight: 500') &nbsp;(#{translate('Organizer')})
+    each attendee, attendeeEmail in attendees
+      if (attendeeEmail !== organizer.email)
+        li
+          span(style='font-weight: 500') #{attendee.cn}
+          span(style='color: #787878;') &nbsp;&lt;#{attendeeEmail}&gt;
