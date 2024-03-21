@@ -34,6 +34,7 @@ module.exports = new AwesomeModule(MODULE_NAME, {
       const app = require('./backend/webserver/application')(dependencies);
 
       app.use('/api', this.api);
+
       webserverWrapper.addApp(MODULE_NAME, app);
 
       callback();

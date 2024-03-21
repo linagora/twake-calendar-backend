@@ -1,33 +1,13 @@
 const cors = require('cors');
-const glob = require('glob-all');
 
 const AwesomeModule = require('awesome-module');
 const Dependency = AwesomeModule.AwesomeModuleDependency;
-const FRONTEND_JS_PATH = `${__dirname}/frontend/js/`;
-const innerApps = ['esn'];
-const modulesOptions = {
-  localJsFiles: glob.sync([
-    FRONTEND_JS_PATH + '**/*.module.js',
-    FRONTEND_JS_PATH + '**/!(*spec).js'
-  ])
-};
-
-const frontendJsFilesFullPath = glob.sync([
-  FRONTEND_JS_PATH + '**/*.module.js',
-  FRONTEND_JS_PATH + '**/!(*spec).js'
-]);
-
-const frontendJsFilesUri = frontendJsFilesFullPath.map(function(filepath) {
-  return filepath.replace(FRONTEND_JS_PATH, '');
-});
 
 const moduleData = {
   shortName: 'dav',
   fullName: 'linagora.esn.davproxy',
   angularModules: []
 };
-
-moduleData.angularModules.push([moduleData.shortName, frontendJsFilesUri, moduleData.fullName, innerApps, modulesOptions]);
 
 const davProxy = new AwesomeModule(moduleData.fullName, {
   dependencies: [
@@ -64,7 +44,6 @@ const davProxy = new AwesomeModule(moduleData.fullName, {
     },
 
     deploy: function(dependencies, callback) {
-      var webserverWrapper = dependencies('webserver-wrapper');
       var app = require('./backend/webserver/application')(dependencies);
 
       app.all('/api/*', cors({
@@ -76,9 +55,6 @@ const davProxy = new AwesomeModule(moduleData.fullName, {
       app.use('/api/calendars', this.api.calendars);
       app.use('/api/principals', this.api.principals);
       app.use('/api/json', this.api.json);
-
-      moduleData.angularModules.forEach(mod => webserverWrapper.injectAngularModules.apply(webserverWrapper, mod));
-      webserverWrapper.addApp(moduleData.shortName, app);
 
       return callback();
     },

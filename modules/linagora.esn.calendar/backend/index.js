@@ -35,7 +35,6 @@ const AwesomeCalendarModule = new AwesomeModule('linagora.esn.calendar', {
     new Dependency(Dependency.TYPE_NAME, 'linagora.esn.resource', 'resource'),
     new Dependency(Dependency.TYPE_NAME, 'linagora.esn.core.technical-user', 'technical-user'),
     new Dependency(Dependency.TYPE_NAME, 'linagora.esn.autoconf', 'autoconf', true),
-    new Dependency(Dependency.TYPE_NAME, 'linagora.esn.dav.import', 'dav.import')
   ],
 
   states: {
