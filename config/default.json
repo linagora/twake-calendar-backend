@@ -120,7 +120,9 @@
     "linagora.esn.davserver",
     "linagora.esn.digest.daily",
     "linagora.esn.jobqueue",
-    "linagora.esn.messaging.email"
+    "linagora.esn.messaging.email",
+    "linagora.esn.resource",
+    "linagora.esn.dav.import"
   ],
   "email": {
     "templatesDir": "./templates/email"
