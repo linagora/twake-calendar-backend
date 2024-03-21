@@ -1,5 +1,6 @@
 'use strict';
 
+
 const AwesomeModule = require('awesome-module');
 const Dependency = AwesomeModule.AwesomeModuleDependency;
 const MODULE_NAME = 'linagora.esn.resource';
@@ -30,9 +31,12 @@ module.exports = new AwesomeModule(MODULE_NAME, {
     },
 
     deploy: function(dependencies, callback) {
+      const webserverWrapper = dependencies('webserver-wrapper');
       const app = require('./backend/webserver/application')(dependencies);
 
       app.use('/api', this.api);
+
+      webserverWrapper.addApp(MODULE_NAME, app);
 
       callback();
     },
