@@ -1,0 +1,38 @@
+@import "../css/event.less";
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "header header header header" "import import import import" "failed failed failed failed";
+  }
+  
+  .header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "logo subject subject";
+    grid-area: header;
+    align-self: center;
+  }
+
+  .subject {
+    grid-area: subject;
+    justify-self: center;
+    //align-self: center;
+
+    .title {
+      font-size: 25px;
+      font-weight: bold;
+    }
+  }
+
+  .logo {
+    grid-area: logo;
+    align-self: center;
+  }
+  
+  .import {
+    grid-area: import;
+  }
+  
+  .failed { grid-area: failed; }

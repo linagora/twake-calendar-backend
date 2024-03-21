@@ -1,0 +1,28 @@
+doctype html
+html.mail
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    style
+      include ../css/media.less
+  
+  body
+    .wrapper.mail-content
+      .grid-container
+        .header
+          .logo
+            a(href=content.baseUrl)
+              img(src="cid:logo", alt="OpenPaas Logo")
+          .subject 
+            div.title Import Report
+        .import
+          span Your Import is done see below the report :
+            ul
+              li #{content.jobSucceed.length} Event(s) imported successfully
+              li #{content.jobFailedList.length} Event(s) not imported
+        if content.jobFailedList.length
+          .failed
+            span List of events who were not imported :
+            ul
+              each event in content.jobFailedList
+                li #{event.uid.substring(1,30)} - #{event.summary} - #{event.date.start || 'no start date'} / #{event.date.end || 'no end date'}

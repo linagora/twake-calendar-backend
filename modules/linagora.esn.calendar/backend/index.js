@@ -8,7 +8,6 @@ const AwesomeCalendarModule = new AwesomeModule('linagora.esn.calendar', {
   dependencies: [
     new Dependency(Dependency.TYPE_NAME, 'linagora.esn.core.logger', 'logger'),
     new Dependency(Dependency.TYPE_NAME, 'linagora.esn.core.db', 'db'),
-    new Dependency(Dependency.TYPE_NAME, 'linagora.esn.graceperiod', 'graceperiod'),
     new Dependency(Dependency.TYPE_NAME, 'linagora.esn.core.config', 'config'),
     new Dependency(Dependency.TYPE_NAME, 'linagora.esn.core.esn-config', 'esn-config'),
     new Dependency(Dependency.TYPE_NAME, 'linagora.esn.core.elasticsearch', 'elasticsearch'),
@@ -36,7 +35,6 @@ const AwesomeCalendarModule = new AwesomeModule('linagora.esn.calendar', {
     new Dependency(Dependency.TYPE_NAME, 'linagora.esn.resource', 'resource'),
     new Dependency(Dependency.TYPE_NAME, 'linagora.esn.core.technical-user', 'technical-user'),
     new Dependency(Dependency.TYPE_NAME, 'linagora.esn.autoconf', 'autoconf', true),
-    new Dependency(Dependency.TYPE_NAME, 'linagora.esn.dav.import', 'dav.import')
   ],
 
   states: {
