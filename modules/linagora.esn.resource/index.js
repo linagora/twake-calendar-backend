@@ -1,6 +1,5 @@
 'use strict';
 
-
 const AwesomeModule = require('awesome-module');
 const Dependency = AwesomeModule.AwesomeModuleDependency;
 const MODULE_NAME = 'linagora.esn.resource';
