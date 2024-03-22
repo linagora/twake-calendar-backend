@@ -49,7 +49,8 @@ module.exports = {
         .catch(commons.logError)
         .finally(commons.exit);
     }
-  }
+  },
+  exec
 };
 
 function exec({ host, port, type, index } = {}) {
